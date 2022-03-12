@@ -121,6 +121,9 @@ body::-webkit-scrollbar {
     position: relative;
     .carousel {
         position: relative;
+        @media (max-width:767px) {
+            height: 400px !important;
+        }
         .carousel-indicators {
             position: absolute;
             bottom: -50px !important;
@@ -136,6 +139,18 @@ body::-webkit-scrollbar {
         }
         .carousel-inner {
             position: relative;
+            .carousel-item {
+                span {
+                    @media (max-width:767px) {
+                        height: 400px !important;
+                    }
+                    img {
+                        @media (max-width:767px) {
+                            object-fit: cover !important;
+                        }
+                    }
+                }
+            }
         }
         .carousel-control-prev {
             // background-image: none !important;
