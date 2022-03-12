@@ -41,7 +41,7 @@ export default function Header() {
                             </svg>
 
                         ) : (
-                            <span className='sign-in-text' onClick={() => { setToggleSignIn(!toggleSignIn); setShowLogin(true) }}>Sign in</span>
+                            <span className='sign-in-text' onClick={() => { setToggleSignIn(!toggleSignIn); setShowLogin(true); }}>Sign in</span>
                         )
                     }
                     <svg className='icon' onClick={() => redirectTo('/search')} xmlns="http://www.w3.org/2000/svg" width="30.621" height="33.621" viewBox="0 0 30.621 33.621">
@@ -74,8 +74,8 @@ export default function Header() {
                         </div>
                     </li>
                     <li>Hi, John William</li>
-                    <li onClick={() => redirectTo('/category/new')} className={path=='new'?'active':''}>New</li>
-                    <li onClick={() => redirectTo('/category/seating')} className={path=='seating'?'active':''}>Seating</li>
+                    <li onClick={() => redirectTo('/category/new')} className={path == 'new' ? 'active' : ''}>New</li>
+                    <li onClick={() => redirectTo('/category/seating')} className={path == 'seating' ? 'active' : ''}>Seating</li>
                     <li>Beds</li>
                     <li>Storage</li>
                     <li>Kids</li>
@@ -86,7 +86,7 @@ export default function Header() {
                     <li>My accounts</li>
                     <li>My orders</li>
                     <li>Settings</li>
-                    <li>Sign in</li>
+                    <li onClick={() => { setToggleSignIn(!toggleSignIn); setShowLogin(true); setToggle(false) }}>Sign in</li>
                 </ul>
             </div>
             <div className={toggleCart ? 'cart-wrapper d-block' : 'cart-wrapper d-none'}>
@@ -169,6 +169,14 @@ export default function Header() {
                 {
                     showSignUp ? (
                         <>
+                            <div className='d-flex justify-content-end p-0'>
+                                <svg width="30" height="30" className='p-0' onClick={() => { setToggleSignIn(!toggleSignIn); setShowLogin(true); setShowOtpFields(false); }}
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <g data-name="Layer 2"><g data-name="close"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0" />
+                                        <path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z" /></g>
+                                    </g>
+                                </svg>
+                            </div>
                             <div className='input-wrapper'>
                                 <label className='text-label'>Name</label>
                                 <input type="text" className='text-input'></input>
@@ -187,6 +195,14 @@ export default function Header() {
                 {
                     showLogin ? (
                         <>
+                            <div className='d-flex justify-content-end p-0'>
+                                <svg width="30" height="30" className='p-0' onClick={() => { setToggleSignIn(!toggleSignIn); setShowLogin(true); setShowOtpFields(false); }}
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <g data-name="Layer 2"><g data-name="close"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0" />
+                                        <path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z" /></g>
+                                    </g>
+                                </svg>
+                            </div>
                             <div className='input-wrapper'>
                                 <label className='text-label'>Email</label>
                                 <input type="email" className='text-input'></input>
@@ -207,6 +223,14 @@ export default function Header() {
                 {
                     showOtpFields ? (
                         <>
+                            <div className='d-flex justify-content-end p-0'>
+                                <svg width="30" height="30" className='p-0' onClick={() => { setToggleSignIn(!toggleSignIn); setShowLogin(true); setShowOtpFields(false); }}
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <g data-name="Layer 2"><g data-name="close"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0" />
+                                        <path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z" /></g>
+                                    </g>
+                                </svg>
+                            </div>
                             <div className='input-wrapper'>
                                 <label className='text-label'>Confirmation code</label>
                                 <input type="email" className='text-input'></input>
@@ -273,8 +297,8 @@ export default function Header() {
             </div >
             <div className='header-2'>
                 <ul className='header-list'>
-                    <li className={path=='new'?'active':''} onClick={() => redirectTo('/category/new')}>NEW</li>
-                    <li className={path=='seating'?'active':''} onClick={() => redirectTo('/category/seating')}>SEATING</li>
+                    <li className={path == 'new' ? 'active' : ''} onClick={() => redirectTo('/category/new')}>NEW</li>
+                    <li className={path == 'seating' ? 'active' : ''} onClick={() => redirectTo('/category/seating')}>SEATING</li>
                     <li>BEDS</li>
                     <li>STORAGE</li>
                     <li>KIDS</li>
