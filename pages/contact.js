@@ -10,7 +10,7 @@ import CarouselItem from '../Components/CarouselItem'
 import Header from '../Components/Header'
 import ContactDetails from '../Components/ContactDetails'
 
-export default function contact() {
+export default function Contact() {
   const [cardList, setCardList] = useState([
     {
       src: itemImg,

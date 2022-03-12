@@ -5,7 +5,7 @@ import CardWrapper from '../Components/CardWrapper'
 import Header from '../Components/Header'
 import itemImg from '../public/assets/images/item.jpeg';
 
-export default function search() {
+export default function Search() {
     const [cardList, setCardList] = useState([
         {
             src: itemImg,

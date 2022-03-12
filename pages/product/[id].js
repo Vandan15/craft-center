@@ -7,7 +7,7 @@ import Footer from '../../Components/Footer';
 import Header from '../../Components/Header';
 import ItemDetails from '../../Components/ItemDetails';
 import itemImg from '../../public/assets/images/item.jpeg';
-export default function product() {
+export default function Product() {
   const router = useRouter();
   const [cardList, setCardList] = useState([
     {
